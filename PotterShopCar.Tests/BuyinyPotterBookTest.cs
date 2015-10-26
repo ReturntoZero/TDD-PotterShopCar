@@ -9,7 +9,7 @@ namespace PotterShopCar.Tests
     public class BuyinyPotterBookTest
     {
         [TestMethod]
-        public void Test_Customer_Buy_First_Episode_of_Potter_Book()
+        public void Test_Customer_Buy_First_Episode_of_Potter_Book_The_Price_Should_be_100()
         {
             //Arrange
             int expect = 100;
@@ -19,6 +19,34 @@ namespace PotterShopCar.Tests
             book.Name = "Potter 1";
             book.episode = 1;
             customer.Buy(book);
+
+            //Act
+            Employee employee = new Employee();
+            int actual = employee.GetPrice(customer.BuyingBook);
+
+            //Assert
+            Assert.AreEqual(expect, actual);
+        }
+
+        [TestMethod]
+        public void Test_Customer_Buy_First_and_Second_Episode_of_Potter_Price_Should_be_190()
+        {
+              //Arrange
+            int expect = 190;
+            Customer customer = new Customer();
+            Book book = new Book();
+            book.price = 100;
+            book.Name = "Potter 1";
+            book.episode = 1;
+            Book book2 = new Book();
+            book2.price = 100;
+            book2.Name = "Potter 2";
+            book2.episode = 2;
+            List<Book> books = new List<Book>();
+            books.Add(book);
+            books.Add(book2);
+
+            customer.Buy(books);
 
             //Act
             Employee employee = new Employee();

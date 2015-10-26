@@ -13,5 +13,10 @@ namespace PotterShopCarLib
         }
 
         public List<Book> BuyingBook { get; set; }
+
+        public void Buy(List<Book> books)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
