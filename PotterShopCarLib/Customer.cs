@@ -5,11 +5,13 @@ using System.Text;
 
 namespace PotterShopCarLib
 {
-    public class Employee
+    public class Customer
     {
-        public int GetPrice(List<Book> list)
+        public void Buy(Book book)
         {
-            return 100;
+            
         }
+
+        public List<Book> BuyingBook { get; set; }
     }
 }
