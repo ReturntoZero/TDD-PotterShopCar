@@ -15,6 +15,9 @@ namespace PotterShopCar.Tests
             int expect = 100;
             Customer customer = new Customer();
             Book book = new Book();
+            book.price = 100;
+            book.Name = "Potter 1";
+            book.episode = 1;
             customer.Buy(book);
 
             //Act
