@@ -41,7 +41,6 @@ namespace PotterShopCar.Tests
             int expect = 190;
             Customer customer = new Customer();
             List<Book> books = GetTwoDifferentEpisode();
-
             customer.Buy(books);
 
             //Act
