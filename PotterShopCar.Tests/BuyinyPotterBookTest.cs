@@ -51,6 +51,23 @@ namespace PotterShopCar.Tests
             Assert.AreEqual(expect, actual);
         }
 
+        [TestMethod]
+        public void Test_Customer_Buy_First_and_Second_Third_Episode_of_Potter_Price_Should_be_270()
+        {
+            //Arrange
+            double expect = 270;
+            Customer customer = new Customer();
+            List<Book> books = GetThreeDifferentEpisode();
+            customer.Buy(books);
+
+            //Act
+            Employee employee = new Employee();
+            double actual = employee.GetPrice(customer.BuyingBook);
+
+            //Assert
+            Assert.AreEqual(expect, actual);
+        }
+
         private static List<Book> GetTwoDifferentEpisode()
         {
             Book book = new Book();
@@ -64,6 +81,30 @@ namespace PotterShopCar.Tests
             List<Book> books = new List<Book>();
             books.Add(book);
             books.Add(book2);
+            return books;
+        }
+
+
+        private static List<Book> GetThreeDifferentEpisode()
+        {
+            Book book = new Book();
+            book.price = 100;
+            book.Name = "Potter 1";
+            book.episode = 1;
+            Book book2 = new Book();
+            book2.price = 100;
+            book2.Name = "Potter 2";
+            book2.episode = 2;
+
+            Book book3 = new Book();
+            book3.price = 100;
+            book3.Name = "Potter 3";
+            book3.episode = 2;
+
+            List<Book> books = new List<Book>();
+            books.Add(book);
+            books.Add(book2);
+            books.Add(book3);
             return books;
         }
 
