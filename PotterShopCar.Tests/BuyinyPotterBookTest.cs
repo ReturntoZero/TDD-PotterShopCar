@@ -12,14 +12,14 @@ namespace PotterShopCar.Tests
         public void Test_Customer_Buy_First_Episode_of_Potter_Book_The_Price_Should_be_100()
         {
             //Arrange
-            int expect = 100;
+            double expect = 100;
             Customer customer = new Customer();
             Book book = GetSingleEpisode();
             customer.Buy(book);
 
             //Act
             Employee employee = new Employee();
-            int actual = employee.GetPrice(customer.BuyingBook);
+            double actual = employee.GetPrice(customer.BuyingBook);
 
             //Assert
             Assert.AreEqual(expect, actual);
@@ -38,14 +38,14 @@ namespace PotterShopCar.Tests
         public void Test_Customer_Buy_First_and_Second_Episode_of_Potter_Price_Should_be_190()
         {
             //Arrange
-            int expect = 190;
+            double expect = 190;
             Customer customer = new Customer();
             List<Book> books = GetTwoDifferentEpisode();
             customer.Buy(books);
 
             //Act
             Employee employee = new Employee();
-            int actual = employee.GetPrice(customer.BuyingBook);
+            double actual = employee.GetPrice(customer.BuyingBook);
 
             //Assert
             Assert.AreEqual(expect, actual);

@@ -24,5 +24,6 @@ namespace PotterShopCarLib
         /// 集數
         /// </summary>
         public int episode { get; set; }
+
     }
 }

@@ -9,14 +9,21 @@ namespace PotterShopCarLib
     {
         public void Buy(Book book)
         {
-            
+            if (this.BuyingBook == null)
+            {
+                this.BuyingBook = new List<Book>();
+            }
+            this.BuyingBook.Add(book);
         }
 
-        public List<Book> BuyingBook { get; set; }
+        public List<Book> BuyingBook { get; private set; }
 
         public void Buy(List<Book> books)
         {
-            throw new NotImplementedException();
+            if (this.BuyingBook == null) {
+                this.BuyingBook = new List<Book>();
+            }
+            this.BuyingBook.AddRange(books);
         }
     }
 }
